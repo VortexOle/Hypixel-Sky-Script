@@ -8,6 +8,10 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
+
+//https://github.com/AstrqlDev/Pizza-Client
+//https://github.com/BiscuitDevelopment/SkyblockAddons
+
 @Getter
 @Mod(modid = "skyscript", name = "SkyScript", version = "1.0", clientSideOnly = true)
 
