@@ -6,8 +6,8 @@
         <outputRelativeToContentRoot value="true" />
         <option name="defaultObfuscationEnv" value="named:intermediary" />
         <option name="inMapFileNamedIntermediary" value="C:\Users\Lothar Manns\.gradle\caches\essential-loom\1.8.9\de.oceanlabs.mcp.mcp_stable.1_8_9.22-1.8.9-forge-1.8.9-11.15.1.2318-1.8.9\mappings-mixin-srg.tiny" />
-        <option name="outMapFileNamedIntermediary" value="C:\Users\Lothar Manns\Downloads\ForgeMixins-master\SkyScript\build\loom-cache\mixin-map-de.oceanlabs.mcp.mcp_stable.1_8_9.22-1.8.9-forge-1.8.9-11.15.1.2318-1.8.9.0.tiny" />
-        <option name="outRefMapFile" value="C:\Users\Lothar Manns\Downloads\ForgeMixins-master\SkyScript\build\classes\java\test\SkyScript-refmap.json" />
+        <option name="outMapFileNamedIntermediary" value="C:\Users\Lothar Manns\Downloads\ForgeMixins-master\Hypixel-Sky-Script\Hypixel-Sky-Script\build\loom-cache\mixin-map-de.oceanlabs.mcp.mcp_stable.1_8_9.22-1.8.9-forge-1.8.9-11.15.1.2318-1.8.9.0.tiny" />
+        <option name="outRefMapFile" value="C:\Users\Lothar Manns\Downloads\ForgeMixins-master\Hypixel-Sky-Script\Hypixel-Sky-Script\build\classes\java\test\SkyScript-refmap.json" />
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.24/13a394eed5c4f9efb2a6d956e2086f1d81e857d9/lombok-1.18.24.jar" />
         </processorPath>
@@ -17,8 +17,8 @@
         <outputRelativeToContentRoot value="true" />
         <option name="defaultObfuscationEnv" value="named:intermediary" />
         <option name="inMapFileNamedIntermediary" value="C:\Users\Lothar Manns\.gradle\caches\essential-loom\1.8.9\de.oceanlabs.mcp.mcp_stable.1_8_9.22-1.8.9-forge-1.8.9-11.15.1.2318-1.8.9\mappings-mixin-srg.tiny" />
-        <option name="outMapFileNamedIntermediary" value="C:\Users\Lothar Manns\Downloads\ForgeMixins-master\SkyScript\build\loom-cache\mixin-map-de.oceanlabs.mcp.mcp_stable.1_8_9.22-1.8.9-forge-1.8.9-11.15.1.2318-1.8.9.1.tiny" />
-        <option name="outRefMapFile" value="C:\Users\Lothar Manns\Downloads\ForgeMixins-master\SkyScript\build\classes\java\main\SkyScript-refmap.json" />
+        <option name="outMapFileNamedIntermediary" value="C:\Users\Lothar Manns\Downloads\ForgeMixins-master\Hypixel-Sky-Script\Hypixel-Sky-Script\build\loom-cache\mixin-map-de.oceanlabs.mcp.mcp_stable.1_8_9.22-1.8.9-forge-1.8.9-11.15.1.2318-1.8.9.1.tiny" />
+        <option name="outRefMapFile" value="C:\Users\Lothar Manns\Downloads\ForgeMixins-master\Hypixel-Sky-Script\Hypixel-Sky-Script\build\classes\java\main\SkyScript-refmap.json" />
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.24/13a394eed5c4f9efb2a6d956e2086f1d81e857d9/lombok-1.18.24.jar" />
         </processorPath>
