@@ -29,7 +29,7 @@
     <remote-repository>
       <option name="id" value="deobfDeps" />
       <option name="name" value="deobfDeps" />
-      <option name="url" value="file:/$PROJECT_DIR$/../../../../Lothar%20Manns/.gradle/caches/minecraft/deobfedDeps/" />
+      <option name="url" value="file:/$USER_HOME$/Lothar%20Manns/.gradle/caches/minecraft/deobfedDeps/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="maven2" />
@@ -54,12 +54,12 @@
     <remote-repository>
       <option name="id" value="deobfDeps" />
       <option name="name" value="deobfDeps" />
-      <option name="url" value="file:/$PROJECT_DIR$/../../../../Lothar%20Manns/.gradle/caches/minecraft/deobfedDeps" />
+      <option name="url" value="file:/$USER_HOME$/Lothar%20Manns/.gradle/caches/minecraft/deobfedDeps" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="UserLocalRemappedMods" />
       <option name="name" value="UserLocalRemappedMods" />
-      <option name="url" value="file:/$PROJECT_DIR$/../../../../Lothar%20Manns/Downloads/ForgeMixins-master/SkyScript/.gradle/loom-cache/remapped_mods/" />
+      <option name="url" value="file:/$USER_HOME$/Lothar%20Manns/Downloads/ForgeMixins-master/SkyScript/.gradle/loom-cache/remapped_mods/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="DevAuth" />
@@ -75,6 +75,11 @@
       <option name="id" value="Fabric" />
       <option name="name" value="Fabric" />
       <option name="url" value="https://maven.fabricmc.net/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="UserLocalRemappedMods" />
+      <option name="name" value="UserLocalRemappedMods" />
+      <option name="url" value="file:/$PROJECT_DIR$/../../../../../Lothar%20Manns/Downloads/ForgeMixins-master/Hypixel-Sky-Script/Hypixel-Sky-Script/.gradle/loom-cache/remapped_mods/" />
     </remote-repository>
   </component>
 </project>

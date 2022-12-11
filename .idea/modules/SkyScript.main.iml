@@ -3,13 +3,6 @@
   <component name="FacetManager">
     <facet type="minecraft" name="Minecraft">
       <configuration>
-        <userChosenTypes>
-          <map>
-            <entry key="SPONGE" value="true" />
-            <entry key="MIXIN" value="true" />
-            <entry key="MCP" value="true" />
-          </map>
-        </userChosenTypes>
         <autoDetectTypes>
           <platformType>FORGE</platformType>
           <platformType>MCP</platformType>
