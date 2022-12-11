@@ -3,7 +3,8 @@ package com.vortexole.skyscript.GUIs;
 import net.minecraft.client.gui.GuiScreen;
 
 public class MainGui extends GuiScreen{
-	
+
+	//doesnt work yet
 	@Override
 	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
 		
