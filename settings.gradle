@@ -20,11 +20,23 @@ pluginManagement {
         maven {
             url 'https://repo.sk1er.club/repository/maven-releases/'
         }
+        maven {
+            name = "Forge"
+            url = "https://maven.minecraftforge.net"
+        }
+        maven {
+            name = "Jitpack"
+            url = "https://jitpack.io/"
+        }
+
     }
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id == 'gg.essential.loom') {
                 useModule group: 'gg.essential', name: 'architectury-loom', version: requested.version
+            }
+            if (requested.id.id == 'org.spongepowered.mixin') {
+                useModule "com.github.xcfrg:MixinGradle:${requested.version}"
             }
         }
     }
