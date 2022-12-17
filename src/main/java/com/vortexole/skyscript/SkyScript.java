@@ -1,6 +1,7 @@
 package com.vortexole.skyscript;
 
 import com.vortexole.skyscript.commands.SkyScriptCommands;
+import com.vortexole.skyscript.utils.Chat;
 import lombok.Getter;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.fml.common.Mod;

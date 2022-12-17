@@ -35,4 +35,11 @@ public class Chat {
         return Pattern.compile("[^a-z A-Z:0-9/'._]").matcher(message).replaceAll("");
     }
 
+    public static void sendCommand(String cmd) {
+        Minecraft.getMinecraft().thePlayer.sendChatMessage(cmd);
+    }
+    public static void sendInChat(String msg) {
+        Minecraft.getMinecraft().thePlayer.sendChatMessage(msg);
+    }
+
 }
