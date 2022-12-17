@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 
 /*
-This was yeeted from SkayBlock addons and all credits go to Biscuit for creating it
+This was yeeted from SkylockAddons and all credits go to Biscuit for creating it
  */
 
 public class SkyScriptInstallerFrame extends JFrame implements ActionListener, MouseListener {
