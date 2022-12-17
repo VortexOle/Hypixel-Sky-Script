@@ -4,6 +4,7 @@ import com.vortexole.skyscript.commands.SkyScriptCommands;
 import com.vortexole.skyscript.utils.Chat;
 import lombok.Getter;
 import net.minecraftforge.client.ClientCommandHandler;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -31,6 +32,7 @@ public class SkyScript {
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
 		ClientCommandHandler.instance.registerCommand(new SkyScriptCommands());
+		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	@Mod.EventHandler
