@@ -1,9 +1,10 @@
 # Hypixel-Sky-Script
-It is just a Project where i try to programm a Macro/Script for automatic Farming for Minecraft/Hypixel Skyblock. This is just for educational purposes only and may result in a ban on Hypixel for unfair advantage.
-### Use at your own risk.
+This is just a Project where I try to programm a Macro/Script to automaticly Farm for Minecraft/Hypixel Skyblock to try and test my coding knowledge.
+#### !!!This is just for educational purposes only and I do not condone cheating in any way. Using the script may result in a ban on Hypixel for abusing a unfair advantage!!!
+### Use at your own risk!
 
 ## Installation
-Download the files as a zip and compile it in IntelliJ.
+Download the files as a zip, extract the files and compile it in Eclipse/IntelliJ. Then just double click the .jar file and it (should) automaticly add the mod to the mods folder
 
 
 ## Contributing
