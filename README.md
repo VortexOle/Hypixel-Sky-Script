@@ -1,5 +1,6 @@
 # Hypixel-Sky-Script
 This is just a Project where I try to programm a Macro/Script to automaticly Farm for Minecraft/Hypixel Skyblock to try and test my coding knowledge.
+PS: Alot of the base code is from other mods because im to lazy to code it myself 
 #### !!!This is just for educational purposes only and I do not condone cheating in any way. Using the script may result in a ban on Hypixel for abusing a unfair advantage!!!
 ### Use at your own risk!
 
