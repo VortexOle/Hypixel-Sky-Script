@@ -6,7 +6,7 @@ import org.apache.logging.log4j.message.*;
 
 /*
 * Straight from Buiscuit again
-* what a chad.
+* what a GIGAchad.
  */
 
 
