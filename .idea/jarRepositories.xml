@@ -81,5 +81,10 @@
       <option name="name" value="UserLocalRemappedMods" />
       <option name="url" value="file:/$PROJECT_DIR$/../../../../../Lothar%20Manns/Downloads/ForgeMixins-master/Hypixel-Sky-Script/Hypixel-Sky-Script/.gradle/loom-cache/remapped_mods/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="forge" />
+      <option name="name" value="forge" />
+      <option name="url" value="https://files.minecraftforge.net/maven" />
+    </remote-repository>
   </component>
 </project>

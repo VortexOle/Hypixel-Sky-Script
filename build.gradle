@@ -11,7 +11,7 @@ plugins {
     id 'net.kyori.blossom' version '1.3.1'
 }
 
-group = 'codes.biscuit'
+group = 'com.vortexole'
 
 ext {
     formattedBuildNumber = ''
@@ -55,115 +55,128 @@ blossom {
     replaceToken('@BUILD_NUMBER@', project.buildNumber)
 }
 
-
-        sourceSets {
-            main {
-                // Forge needs resources to be in the same directory as the classes.
-                output.resourcesDir = java.classesDirectory
-            }
+loom {
+    launchConfigs {
+        "client" {
+            property('fml.coreMods.load', 'codes.biscuit.skyblockaddons.tweaker.SkyblockAddonsLoadingPlugin')
+            property('devauth.enabled', 'true')
         }
+    }
+    log4jConfigs.from(file('log-config.xml'))
+    forge {
+        pack200Provider.set(new Pack200Adapter())
+        accessTransformer('src/main/resources/META-INF/skyblockaddons_at.cfg')
+    }
+}
 
-        configurations.create('bundle')
-        configurations.implementation.extendsFrom(configurations.getByName('bundle'))
+sourceSets {
+    main {
+        // Forge needs resources to be in the same directory as the classes.
+        output.resourcesDir = java.classesDirectory
+    }
+}
 
-        repositories {
-            mavenCentral()
-            maven {
-                name 'JitPack'
-                url 'https://jitpack.io'
-            }
-            maven {
-                name 'DevAuth'
-                url 'https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1'
-            }
-        }
+configurations.create('bundle')
+configurations.implementation.extendsFrom(configurations.getByName('bundle'))
 
-        dependencies {
-            minecraft("com.mojang:minecraft:${project.minecraftVersion}")
-            mappings("de.oceanlabs.mcp:mcp_stable:${project.mappings}")
-            forge("net.minecraftforge:forge:${project.forgeVersion}")
-            runtimeOnly('me.djtheredstoner:DevAuth-forge-legacy:1.1.0')
+repositories {
+    mavenCentral()
+    maven {
+        name 'JitPack'
+        url 'https://jitpack.io'
+    }
+    maven {
+        name 'DevAuth'
+        url 'https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1'
+    }
+}
 
-            // Discord RPC for Java https://github.com/jagrosh/DiscordIPC
-            bundle('com.github.ILikePlayingGames:DiscordIPC:-SNAPSHOT') {
-                exclude module: 'log4j'
-                because 'Different version conflicts with Minecraft\'s Log4J'
-                exclude module: 'gson'
-                because 'Different version conflicts with Minecraft\'s GSON'
-            }
-            bundle('com.github.BiscuitDevelopment:HypixelLocalizationLib:7122472085') {
-                exclude module: 'gson'
-                because 'Different version conflicts with Minecraft\'s GSON'
-            }
-            testImplementation('org.junit.jupiter:junit-jupiter:5.9.1')
-        }
+dependencies {
+    minecraft("com.mojang:minecraft:${project.minecraftVersion}")
+    mappings("de.oceanlabs.mcp:mcp_stable:${project.mappings}")
+    forge("net.minecraftforge:forge:${project.forgeVersion}")
+    runtimeOnly('me.djtheredstoner:DevAuth-forge-legacy:1.1.0')
 
-        tasks.withType(JavaCompile).configureEach {
-            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
-            options.encoding = 'UTF-8'
-        }
+    // Discord RPC for Java https://github.com/jagrosh/DiscordIPC
+    bundle('com.github.ILikePlayingGames:DiscordIPC:-SNAPSHOT') {
+        exclude module: 'log4j'
+        because 'Different version conflicts with Minecraft\'s Log4J'
+        exclude module: 'gson'
+        because 'Different version conflicts with Minecraft\'s GSON'
+    }
+    bundle('com.github.BiscuitDevelopment:HypixelLocalizationLib:7122472085') {
+        exclude module: 'gson'
+        because 'Different version conflicts with Minecraft\'s GSON'
+    }
+    testImplementation('org.junit.jupiter:junit-jupiter:5.9.1')
+}
 
-        tasks.register('copyLicenses', Copy) {
-            from(project.projectDir) {
-                include('LICENSE')
-                include('NOTICE')
-                include('dependencyLicenses/**')
-            }
-            into(sourceSets.main.output.resourcesDir)
-        }
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    options.encoding = 'UTF-8'
+}
 
-        jar {
-            manifest.attributes(
-                    'Manifest-Version': '2.0',
-                    'Main-Class': 'SkyblockAddonsInstallerFrame',
-                    'Implementation-Title': project.name,
-                    'Implementation-Version': project.version,
-                    'Implementation-Vendor': 'BiscuitDevelopment',
-                    'Specification-Title': project.name,
-                    'Specification-Vendor': 'BiscuitDevelopment',
-                    'Specification-Version': project.version,
-                    'FMLCorePlugin': "${project.group}.${modId}.tweaker.${project.name}LoadingPlugin",
-                    'ForceLoadAsMod': true,
-                    'FMLCorePluginContainsFMLMod': true,
-                    'ModSide': 'CLIENT',
-                    'FMLAT': "${modId}_at.cfg"
-            )
-        }
+tasks.register('copyLicenses', Copy) {
+    from(project.projectDir) {
+        include('LICENSE')
+        include('NOTICE')
+        include('dependencyLicenses/**')
+    }
+    into(sourceSets.main.output.resourcesDir)
+}
 
-        remapJar {
-            from(tasks.shadowJar)
-            input.set(tasks.shadowJar.archiveFile)
+jar {
+    manifest.attributes(
+            'Manifest-Version': '2.0',
+            'Main-Class': 'SkyblockAddonsInstallerFrame',
+            'Implementation-Title': project.name,
+            'Implementation-Version': project.version,
+            'Implementation-Vendor' : 'BiscuitDevelopment',
+            'Specification-Title': project.name,
+            'Specification-Vendor': 'BiscuitDevelopment',
+            'Specification-Version': project.version,
+            'FMLCorePlugin': "${project.group}.${modId}.tweaker.${project.name}LoadingPlugin",
+            'ForceLoadAsMod': true,
+            'FMLCorePluginContainsFMLMod': true,
+            'ModSide': 'CLIENT',
+            'FMLAT': "${modId}_at.cfg"
+    )
+}
 
-            archiveFileName = "${project.name}-${project.version}-for-MC-${project.minecraftVersion}.jar"
-        }
+remapJar {
+    from(tasks.shadowJar)
+    input.set(tasks.shadowJar.archiveFile)
 
-        processResources {
-            dependsOn tasks.copyLicenses
-            inputs.property "version", project.version
-            inputs.property "mcversion", project.minecraftVersion
+    archiveFileName = "${project.name}-${project.version}-for-MC-${project.minecraftVersion}.jar"
+}
 
-            // replace stuff in mcmod.info, nothing else
-            from('mcmod.info') {
-                // replace version and mcversion
-                expand(version: project.version, mcversion: project.minecraftVersion)
-            }
-        }
+processResources {
+    dependsOn tasks.copyLicenses
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraftVersion
 
-        shadowJar {
-            configurations = [project.configurations.bundle]
-            duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    // replace stuff in mcmod.info, nothing else
+    from('mcmod.info') {
+        // replace version and mcversion
+        expand(version: project.version, mcversion: project.minecraftVersion)
+    }
+}
 
-            exclude('dummyThing')
-            exclude('module-info.class')
-            exclude('META-INF/versions/')
+shadowJar {
+    configurations = [project.configurations.bundle]
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
-            // Relocate Discord RPC into the main codebase
-            relocate 'com.jagrosh.discordipc', 'shadow.discordipc'
-        }
+    exclude('dummyThing')
+    exclude('module-info.class')
+    exclude('META-INF/versions/')
 
-        test {
-            useJUnitPlatform()
-            testLogging {
-                events "passed", "skipped", "failed"
-            }
-        }
+    // Relocate Discord RPC into the main codebase
+    relocate 'com.jagrosh.discordipc', 'shadow.discordipc'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
