@@ -65,8 +65,29 @@ public class SkyScript {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-	}
+		proxy.preInit(preEvent)
 
+
+		try {
+			URL versionUrl = new URL("https://raw.githubusercontent.com/JackTYM/AIOMacro/master/currentVersion.txt");
+			HttpURLConnection versionConnection = (HttpURLConnection) versionUrl.openConnection();
+			InputStream response = versionConnection.getInputStream();
+			try (Scanner scanner = new Scanner(response)) {
+				String responseBody = scanner.useDelimiter("\\A").next();
+
+				int versionInt = Integer.parseInt(responseBody.replace(".", ""));
+
+				int clientVersion = Integer.parseInt(NGGlobal.VERSION.split("v")[1].replace(".", ""));
+
+				if (clientVersion < versionInt) {
+					remindToUpdate = true;
+				}
+				if (clientVersion > versionInt) {
+					System.out.println("You are in the future!");
+				}
+			}
+		} catch (Exception ignored) {
+		}
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
 		ClientCommandHandler.instance.registerCommand(new SkyScriptCommands());
