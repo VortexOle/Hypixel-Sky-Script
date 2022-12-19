@@ -69,7 +69,7 @@ public class SkyScript {
 
 
 		try {
-			URL versionUrl = new URL("https://raw.githubusercontent.com/JackTYM/AIOMacro/master/currentVersion.txt");
+			URL versionUrl = new URL("https://raw.githubusercontent.com/VortexOle/Hypixel-Sky-Script/main/currentVersion.txt");
 			HttpURLConnection versionConnection = (HttpURLConnection) versionUrl.openConnection();
 			InputStream response = versionConnection.getInputStream();
 			try (Scanner scanner = new Scanner(response)) {
