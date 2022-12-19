@@ -22,6 +22,8 @@ import java.util.zip.ZipEntry;
 This was yeeted from SkylockAddons and all credits go to Biscuit for creating it
  */
 
+
+
 public class SkyScriptInstallerFrame extends JFrame implements ActionListener, MouseListener {
 
     private static final Pattern IN_MODS_SUBFOLDER = Pattern.compile("1\\.8\\.9[/\\\\]?$");
