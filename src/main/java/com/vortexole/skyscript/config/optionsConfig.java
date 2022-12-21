@@ -1,17 +1,23 @@
-package main.java.com.vortexole.skyscript.config;
+package com.vortexole.skyscript.config;
 
 import java.io.FileWriter;   // Import the FileWriter class
-import java.io.IOException;  // Import the IOException class to handle errors
+import java.io.IOException; // Import the IOException class to handle errors
+import com.vortexole.skyscript.SkyScript;
 
 public class WriteToFile {
+
+  private static final Logger LOGGER = SkyScript.getLogger();
+
   public static void main(String[] args) {
     try {
-      FileWriter myWriter = new FileWriter("filename.txt");
-      myWriter.write("Files in Java might be tricky, but it is fun enough!");
+      SkyScript main = SkyScript.getInstance();
+
+      FileWriter myWriter = new FileWriter(getSRCFolder + "options.txt");
+      myWriter.write("pauseOnLostFocus:false");
       myWriter.close();
-      System.out.println("Successfully wrote to the file.");
+      LOGGER.error("[SKYSCRIPT] Successfully wrote to the file.");
     } catch (IOException e) {
-      System.out.println("An error occurred.");
+      LOGGER.error("[SKYSCRIPT] Couldnt write to file!")
       e.printStackTrace();
     }
   }

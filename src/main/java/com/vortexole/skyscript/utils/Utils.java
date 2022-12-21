@@ -10,6 +10,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.util.EnumChatFormatting;
 import org.apache.logging.log4j.Logger;
+import net.minecraftforge.fml.common.Loader;
 
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -29,4 +30,7 @@ public class Utils {
     public void sendErrorMessage(String errorText) {
         Chat.addToChat(errorText, EnumChatFormatting.GREEN);
     }
+
+    public File getSRCFolder() {
+        return Loader.instance().activeModContainer().getSource().getParentFile();
 }
