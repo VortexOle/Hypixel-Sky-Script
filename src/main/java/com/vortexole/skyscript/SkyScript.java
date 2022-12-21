@@ -108,6 +108,11 @@ public class SkyScript {
 			keybinding.register();
 		}
 	}
+		public void registerFileWriter(fileWriter) {
+			for (optionsConfig fileWriter : fileWrite) {
+				fileWriter.register();
+			}
+		}
 
 	public static Logger getLogger() {
 		String fullClassName = new Throwable().getStackTrace()[1].getClassName();
