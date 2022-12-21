@@ -17,7 +17,7 @@ public class WriteToFile {
       myWriter.close();
       LOGGER.error("[SKYSCRIPT] Successfully wrote to the file.");
     } catch (IOException e) {
-      LOGGER.error("[SKYSCRIPT] Couldnt write to file!")
+      LOGGER.error("[SKYSCRIPT] Couldnt write to file!");
       e.printStackTrace();
     }
   }
