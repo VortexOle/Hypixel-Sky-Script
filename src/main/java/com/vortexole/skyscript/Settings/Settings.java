@@ -11,6 +11,8 @@ import com.vortexole.skyscript.features.modules.Module;
  *  but you have to credit him
  *
  *  @author HeroCode
+ *
+ *  Big thanks from me. Great mod you got there keep up the work!:)
  */
 public class Setting {
 

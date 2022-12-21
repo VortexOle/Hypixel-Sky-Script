@@ -1,5 +1,15 @@
 package com.vortexole.skyscript.GUIs.component;
 
+/**
+ *  Made by HeroCode
+ *  it's free to use
+ *  but you have to credit him
+ *
+ *  @author HeroCode
+ *
+ *  Big thanks from me. Great mod you got there keep up the work!:)
+ */
+
 public class Component {
 
     public void renderComponent() {

@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import com.vortexole.skyscript.features.modules.Module;
 
 /**
- *  Made by HeroCode Skidded By Throwing
+ *  Made by HeroCode
  *  it's free to use
  *  but you have to credit him
  *
  *  @author HeroCode
+ *
+ *  Big thanks from me. Great mod you got there keep up the work!:)
  */
 public class SettingsManager {
 

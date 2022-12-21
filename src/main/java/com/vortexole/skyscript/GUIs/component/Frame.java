@@ -5,6 +5,16 @@ import org.lwjgl.opengl.GL11;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
 
+/**
+ *  Made by HeroCode
+ *  it's free to use
+ *  but you have to credit him
+ *
+ *  @author HeroCode
+ *
+ *  Big thanks from me. Great mod you got there keep up the work!:)
+ */
+
 public class Frame {
 
     public ArrayList<Component> components;
