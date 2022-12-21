@@ -45,6 +45,8 @@ public class SkyScript {
 
 	public static boolean sentUpdateReminder = false;
 
+	public boolean destructed = false;
+
 	@SidedProxy(clientSide = SkyscriptGlobal.SKY_CLIENT_PROXY, serverSide = SkyscriptGlobal.SKY_COMMON_PROXY)
 	public static CommonProxy proxy;
 
