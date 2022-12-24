@@ -1,14 +1,10 @@
 package com.vortexole.skyscript;
 
 import com.vortexole.skyscript.commands.SkyScriptCommands;
-import com.vortexole.skyscript.utils.Chat;
 import com.vortexole.skyscript.utils.SkyScriptKeyBinding;
 import com.vortexole.skyscript.utils.SkyblockAddonsMessageFactory;
-import com.vortexole.skyscript.proxy.ClientProxy;
-import com.vortexole.skyscript.proxy.CommonProxy;
 import lombok.Getter;
 import lombok.Setter;
-import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -19,17 +15,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import net.minecraft.event.ClickEvent;
-import net.minecraft.event.HoverEvent;
 
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 import java.util.*;
-import java.util.concurrent.Executor;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.regex.Pattern;
 
 @Getter
 @Mod(modid = "skyscript", name = "SkyScript", version = "1.0")
@@ -37,18 +24,11 @@ import java.util.regex.Pattern;
 
 public class SkyScript {
 
-	public static WorldClient mcWorld = mc.theWorld;
-
-	public static EntityPlayerSP mcPlayer = mc.thePlayer;
-
 	public static boolean remindToUpdate = false;
 
 	public static boolean sentUpdateReminder = false;
 
 	public boolean destructed = false;
-
-	@SidedProxy(clientSide = SkyscriptGlobal.SKY_CLIENT_PROXY, serverSide = SkyscriptGlobal.SKY_COMMON_PROXY)
-	public static CommonProxy proxy;
 
 	@Getter
 	private static SkyScript instance;
@@ -67,29 +47,8 @@ public class SkyScript {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		proxy.preInit(preEvent)
+	}
 
-
-		try {
-			URL versionUrl = new URL("https://raw.githubusercontent.com/VortexOle/Hypixel-Sky-Script/main/currentVersion.txt");
-			HttpURLConnection versionConnection = (HttpURLConnection) versionUrl.openConnection();
-			InputStream response = versionConnection.getInputStream();
-			try (Scanner scanner = new Scanner(response)) {
-				String responseBody = scanner.useDelimiter("\\A").next();
-
-				int versionInt = Integer.parseInt(responseBody.replace(".", ""));
-
-				int clientVersion = Integer.parseInt(NGGlobal.VERSION.split("v")[1].replace(".", ""));
-
-				if (clientVersion < versionInt) {
-					remindToUpdate = true;
-				}
-				if (clientVersion > versionInt) {
-					System.out.println("You are in the future!");
-				}
-			}
-		} catch (Exception ignored) {
-		}
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
 		ClientCommandHandler.instance.registerCommand(new SkyScriptCommands());
@@ -105,37 +64,21 @@ public class SkyScript {
 			VERSION = "1.0";
 		}
 	}
+
 	public void registerKeyBindings(List<SkyScriptKeyBinding> keyBindings) {
 		for (SkyScriptKeyBinding keybinding : keyBindings) {
 			keybinding.register();
 		}
 	}
-		public void registerFileWriter(fileWriter) {
-			for (optionsConfig fileWriter : fileWrite) {
-				fileWriter.register();
-			}
-		}
 
 	public static Logger getLogger() {
 		String fullClassName = new Throwable().getStackTrace()[1].getClassName();
 		String simpleClassName = fullClassName.substring(fullClassName.lastIndexOf('.') + 1);
 
 		return LogManager.getLogger(fullClassName, new SkyblockAddonsMessageFactory(simpleClassName));
+
 	}
-
-	@SubscribeEvent
-	public final void onJoinWorld(@NotNull EntityJoinWorldEvent e) {
-		if (mcWorld != null && mcPlayer != null && !sentUpdateReminder && remindToUpdate) {
-
-			ChatStyle style = new ChatStyle().setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "google.com));
-			HoverEvent hoverEvent = new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ChatComponentText("For testing it just opens google"));
-			ChatComponentText linkMessage = new ChatComponentText("google.com");
-
-			linkMessage.setChatStyle(style.setChatHoverEvent(hoverEvent));
-
-			mcPlayer.addChatMessage(new ChatComponentText(EnumChatFormatting.GREEN + "[SkyScript] No Update Is Available! You could be missing out on nothing"));
-			mcPlayer.addChatMessage(linkMessage);
-			sentUpdateReminder = true;
 }
+
 
 

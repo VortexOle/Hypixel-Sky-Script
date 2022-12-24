@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.electronwill.night-config:toml:3.6.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.electronwill.night-config/toml/3.6.5/76d244e23fd69c681c2effcdaa602950167ec406/toml-3.6.5.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.electronwill.night-config/toml/3.6.5/7e096a43d44ea499ab2c12a0f96168af78ffb003/toml-3.6.5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.electronwill.night-config/toml/3.6.5/d8e720c9bf2795d03ab805a5b44d65d4a79a721b/toml-3.6.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

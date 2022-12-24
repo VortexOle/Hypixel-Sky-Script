@@ -91,9 +91,9 @@ public class SkyScriptCommands extends CommandBase {
     @Override
     public String toString() {
         StringBuilder usageBuilder = new StringBuilder(
-                "Usage: §b" + syntax + "§r" +
-                        "\n" +
-                        "\n§lDescription:" +
-                        "\n§7" + Translations.getMessage(description));
-
+                "Usage:" + syntax);
+        return null;
+        }
+        }
+    }
 }

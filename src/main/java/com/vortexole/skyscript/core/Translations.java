@@ -1,3 +1,4 @@
+/**
 package com.vortexole.skyscript.core;
 
 import com.google.gson.JsonElement;
@@ -49,24 +50,10 @@ public class Translations {
                 matcher = VARIABLE_PATTERN.matcher(text);
             }
 
-            // Handle RTL text...
-            if ((main.getConfigValues().getLanguage() == Language.HEBREW || main.getConfigValues().getLanguage() == Language.ARABIC) &&
-                    !Minecraft.getMinecraft().fontRendererObj.getBidiFlag()) {
-                text = bidiReorder(text);
-            }
         } catch (Exception ex) {
             text = path; // In case of fire...
         }
         return text;
     }
-
-    private static String bidiReorder(String text) {
-        try {
-            Bidi bidi = new Bidi((new ArabicShaping(ArabicShaping.LETTERS_SHAPE)).shape(text), Bidi.DIRECTION_DEFAULT_RIGHT_TO_LEFT);
-            bidi.setReorderingMode(Bidi.REORDER_DEFAULT);
-            return bidi.writeReordered(Bidi.DO_MIRRORING);
-        } catch (ArabicShapingException ex) {
-            return text;
-        }
-    }
 }
+*/

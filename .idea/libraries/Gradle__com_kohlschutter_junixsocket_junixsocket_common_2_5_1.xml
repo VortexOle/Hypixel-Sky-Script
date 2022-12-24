@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.kohlschutter.junixsocket:junixsocket-common:2.5.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.kohlschutter.junixsocket/junixsocket-common/2.5.1/87515d51236afd95693fdc6f2233a98f9c1429b1/junixsocket-common-2.5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.kohlschutter.junixsocket/junixsocket-common/2.5.1/847d9ce691c0e89aaacbc0cd213efbcf0c98ac4b/junixsocket-common-2.5.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.kohlschutter.junixsocket/junixsocket-common/2.5.1/48966af8c25a5fce229040727bbb0914b21229b6/junixsocket-common-2.5.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

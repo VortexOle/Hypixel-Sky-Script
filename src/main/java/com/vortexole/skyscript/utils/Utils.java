@@ -1,19 +1,15 @@
 package com.vortexole.skyscript.utils;
 
-import com.vortexole.skyscript.utils.Chat;
-
 import com.google.common.collect.Sets;
 import com.vortexole.skyscript.SkyScript;
 import lombok.Getter;
 import lombok.Setter;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.util.EnumChatFormatting;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.fml.common.Loader;
 
+import java.io.File;
 import java.util.Set;
-import java.util.regex.Pattern;
 
 @Getter
 @Setter
@@ -33,4 +29,5 @@ public class Utils {
 
     public File getSRCFolder() {
         return Loader.instance().activeModContainer().getSource().getParentFile();
+    }
 }
